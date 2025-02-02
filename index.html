@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wojciech Trzpis</title>
+  <link rel="manifest" href="/site.webmanifest">
+      
+  <!-- WebGL script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
+    
+  <!-- jQuery Scripts -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.4.0/gl-matrix.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const offcanvasSidebar = document.getElementById('offcanvasSidebar');
+        const content = document.getElementById('content');
+  
+        offcanvasSidebar.addEventListener('show.bs.offcanvas', function () {
+          content.classList.add('shifted');
+        });
+  
+        offcanvasSidebar.addEventListener('hidden.bs.offcanvas', function () {
+          content.classList.remove('shifted');
+        });
+      });
+    </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- Css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/sliders.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body id="main">
+  <div id="wrapper">
+    <div id="sidebar">
+      <button class="btn btn-tertiary position-fixed" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+      ☰
+      </button>
+
+      <div class="offcanvas offcanvas-start" tabindex="1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">Portfolio</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="name">
+      <h1 class="mainfont">Wojciech Trzpis</h1> 
+      <h4 class="mainfont">UX/UI Designer</h4>
+    </div> 
+
+    <canvas id="gl-canvas" width="1280" height="920"></canvas>
+  </div>
+
+</body>
+
+<script src="webgl-demo.js"></script> 
+
+</html>
